@@ -7,13 +7,16 @@ uses
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
   FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait, FireDAC.Comp.UI, Data.DB,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, FireDAC.Phys.PG, FireDAC.Phys.PGDef, FireDAC.Stan.Param,
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet,
+  Datasnap.DBClient;
 
 type
-  TDataModule1 = class(TDataModule)
+  TDMDadosCampanha = class(TDataModule)
     FDConexao: TFDConnection;
-    FDDbDriver: TFDPhysMySQLDriverLink;
-    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    FDPhDriver: TFDPhysPgDriverLink;
+    FDQueryBanco: TFDQuery;
+    DSCampanhaDoacao: TDataSource;
   private
     { Private declarations }
   public
@@ -21,7 +24,7 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+  DMDadosCampanha: TDMDadosCampanha;
 
 implementation
 

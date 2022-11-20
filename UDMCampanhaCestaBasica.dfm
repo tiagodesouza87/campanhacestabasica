@@ -1,24 +1,33 @@
-object DataModule1: TDataModule1
+object DMDadosCampanha: TDMDadosCampanha
   OldCreateOrder = False
-  Height = 150
-  Width = 215
+  Height = 183
+  Width = 279
   object FDConexao: TFDConnection
     Params.Strings = (
-      'Database=campanhacestabasica'
-      'User_Name=root'
-      'Password=adm@1997**'
-      'DriverID=MySQL')
+      'Database=campanha'
+      'User_Name=postgres'
+      'Password=adm1997'
+      'DriverID=PG')
+    Connected = True
     Left = 96
     Top = 16
   end
-  object FDDbDriver: TFDPhysMySQLDriverLink
-    VendorLib = 'C:\Program Files\MySQL\MySQL Server 8.0\lib\libmysql.dll'
-    Left = 24
+  object FDPhDriver: TFDPhysPgDriverLink
+    VendorLib = 'C:\Program Files (x86)\PostgreSQL\10\bin\libpq.dll'
+    Left = 32
     Top = 16
   end
-  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
-    Provider = 'Forms'
+  object FDQueryBanco: TFDQuery
+    Active = True
+    Connection = FDConexao
+    SQL.Strings = (
+      'SELECT * FROM CampanhaDoacao')
     Left = 32
-    Top = 72
+    Top = 64
+  end
+  object DSCampanhaDoacao: TDataSource
+    DataSet = FDQueryBanco
+    Left = 128
+    Top = 64
   end
 end

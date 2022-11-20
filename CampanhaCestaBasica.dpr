@@ -2,18 +2,17 @@ program CampanhaCestaBasica;
 
 uses
   Vcl.Forms,
-  UFormCampanhaCestaBasica in 'UFormCampanhaCestaBasica.pas' {Form1},
-  UDMCampanhaCestaBasica in 'UDMCampanhaCestaBasica.pas' {DataModule1: TDataModule},
-  UFormManutencao in 'UFormManutencao.pas' {Form2};
+  UFormCampanhaCestaBasica in 'UFormCampanhaCestaBasica.pas' {FormCampanha},
+  UFormManutencao in 'UFormManutencao.pas' {FormManutencao},
+  UDMCampanhaCestaBasica in 'UDMCampanhaCestaBasica.pas' {DMDadosCampanha: TDataModule};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TDataModule1, DataModule1);
-  Application.CreateForm(TForm2, Form2);
-  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TFormCampanha, FormCampanha);
+  Application.CreateForm(TDMDadosCampanha, DMDadosCampanha);
+  Application.CreateForm(TFormManutencao, FormManutencao);
   Application.Run;
 end.

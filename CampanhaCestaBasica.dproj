@@ -99,17 +99,17 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="UFormCampanhaCestaBasica.pas">
-            <Form>Form1</Form>
+            <Form>FormCampanha</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UFormManutencao.pas">
+            <Form>FormManutencao</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UDMCampanhaCestaBasica.pas">
-            <Form>DataModule1</Form>
+            <Form>DMDadosCampanha</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="UFormManutencao.pas">
-            <Form>Form2</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
