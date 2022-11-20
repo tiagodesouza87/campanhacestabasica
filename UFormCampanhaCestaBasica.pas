@@ -59,7 +59,7 @@ begin
 end;
 
 //==============================================================================
-// Métodos para chamar funções do CRUD
+// Métodos do CRUD
 //==============================================================================
 procedure TFormCampanha.BbtIncluirClick(Sender: TObject);
 begin
